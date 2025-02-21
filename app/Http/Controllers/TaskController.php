@@ -15,6 +15,7 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
+
         return view('tasks.index', [
             'tasks' => $tasks,
         ]);
@@ -25,7 +26,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        $task = new TASK;
+        $task = new Task;
 
         return view('tasks.create', [
             'task' => $task,
@@ -37,7 +38,7 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        $task = new TASK;
+        $task = new Task;
         $task->content = $request->content;
         $task->save();
 
