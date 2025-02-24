@@ -87,6 +87,7 @@ class TaskController extends Controller
 
         $task = Task::findOrFail($id);
         $task->content = $request->content;
+        $task->status = $request->status;
         $task->save();
 
         return redirect('/');
