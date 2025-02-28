@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for tasklist-rough-sea-7423 on 2025-02-24T11:09:38+09:00
+# fly.toml app configuration file generated for tasklist-rough-sea-7423 on 2025-02-28T11:05:19+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -13,18 +13,17 @@ console_command = 'php /var/www/html/artisan tinker'
     PHP_VERSION = '8.3'
 
 [env]
+  APP_DEBUG = 'false'
   APP_ENV = 'production'
+  APP_NAME = 'laravel'
+  APP_URL = 'https://tasklist-rough-sea-7423.fly.dev'
+  DATABASE_URL = 'postgresql://postgres.ybvodriwqqojwouejidv:j9CQqHJDEUICLCTj@aws-0-ap-northeast-1.pooler.supabase.com:5432/postgres'
+  DB_CONNECTION = 'pgsql'
   LOG_CHANNEL = 'stderr'
   LOG_LEVEL = 'info'
   LOG_STDERR_FORMATTER = 'Monolog\Formatter\JsonFormatter'
   SESSION_DRIVER = 'cookie'
   SESSION_SECURE_COOKIE = 'true'
-
-  APP_URL = 'https://tasklist-rough-sea-7423.fly.dev'
-  APP_NAME = 'laravel'
-  APP_DEBUG = false
-  DB_CONNECTION = 'pgsql'
-  DATABASE_URL = 'postgresql://postgres.ybvodriwqqojwouejidv:j9CQqHJDEUICLCTj@aws-0-ap-northeast-1.pooler.supabase.com:5432/postgres'
 
 [http_service]
   internal_port = 8080
